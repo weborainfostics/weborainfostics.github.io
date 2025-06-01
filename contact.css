@@ -1,0 +1,225 @@
+/* From Uiverse.io by gohar_7145 */
+.outline {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.rect {
+  stroke-dashoffset: 5;
+  stroke-dasharray: 0 0 10 40 10 40;
+  transition: 0.5s;
+  stroke: #e4ae0b;
+}
+
+.nav {
+  position: relative;
+  width: 400px;
+  height: 60px;
+  border-radius: 40px;
+}
+
+.container:hover .outline .rect {
+  transition: 999999s;
+  /* Must specify these values here as something *different* just so that the transition works properly */
+  stroke-dashoffset: 1;
+  stroke-dasharray: 0;
+}
+
+.container {
+  position: absolute;
+  inset: 0;
+  background: rgba(16, 16, 16, 0.4);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5em;
+}
+
+.btn {
+  padding: 0.5em 1.5em;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+.btn:hover {
+  background: #e4ae0b;
+  border-radius: 10px;
+}
+
+.btn:nth-child(1):hover~svg .rect {
+  stroke-dashoffset: 0;
+  stroke-dasharray: 0 2 8 73.3 8 10.7;
+}
+
+.btn:nth-child(2):hover~svg .rect {
+  stroke-dashoffset: 0;
+  stroke-dasharray: 0 12.6 9.5 49.3 9.5 31.6;
+}
+
+.btn:nth-child(3):hover~svg .rect {
+  stroke-dashoffset: 0;
+  stroke-dasharray: 0 24.5 8.5 27.5 8.5 55.5;
+}
+
+.btn:nth-child(4):hover~svg .rect {
+  stroke-dashoffset: 0;
+  stroke-dasharray: 0 34.7 6.9 10.2 6.9 76;
+}
+
+.btn:hover~.outline .rect {
+  stroke-dashoffset: 0;
+  stroke-dasharray: 0 0 10 40 10 40;
+  transition: 0.5s !important;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  background: #000000;
+}
+
+/* PERMANENT LOGO TOP RIGHT */
+.corner-logo {
+  position: fixed;
+  top: 1px;
+  right: 20px;
+  z-index: 999;
+}
+
+.corner-logo img {
+  width: 150px;
+  height: auto;
+}
+
+/* Intro Section */
+.intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  /* Dark background */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: opacity 1s ease;
+}
+
+.intro-logo {
+  width: 450px;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeIn 1.5s forwards;
+}
+
+.tagline {
+  margin-top: 1px;
+  font-size: 24px;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: taglineAppear 1.5s forwards;
+  animation-delay: 1.5s;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes taglineAppear {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Main Content */
+.main-content {
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  padding: 40px;
+}
+
+.main-content.visible {
+  opacity: 1;
+}
+
+
+
+a {
+  text-decoration: none;
+  /* underline hata dega */
+  color: inherit;
+  /* parent ka color le lega */
+}
+
+p {
+  color: white;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 20px;
+  margin-top: 5px;
+}
+
+
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.section {
+  padding: 60px 20px;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+input, textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: #1e1e1e;
+  color: white;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #03dac6;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #018786;
+}
